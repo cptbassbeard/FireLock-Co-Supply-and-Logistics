@@ -1,0 +1,7 @@
+
+class CfgFunctions
+{
+    #include "scripts\functions\cfgFunctions.hpp"
+};
+
+enableDebugConsole = 1;

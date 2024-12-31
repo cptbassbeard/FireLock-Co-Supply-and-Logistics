@@ -24,5 +24,5 @@
 ["FLC_CBA_debug", "CHECKBOX", ["Debug", "turn on debug for all trains"], "Firelock Co Supply & Logistics", false,1,{},false] call CBA_fnc_addSetting;
 
 // EDITBOX --- extra argument: default value
-["FLC_CBA_tracks", "EDITBOX",  ["custom track classnames", "for adding custom tracks"], "Firelock Co Supply & Logistics", "['ATS_Tracks_Base','somemoreclassnames']", 1, {FLCSL_Tracks = FLCSL_configTracks append (parseSimpleArray FLC_CBA_tracks)},false] call CBA_fnc_addSetting;
+["FLC_CBA_tracks", "EDITBOX",  ["custom track classnames", "for adding custom tracks"], "Firelock Co Supply & Logistics", "['ATS_Tracks_Base','somemoreclassnames']", 1, {},true] call CBA_fnc_addSetting;
 

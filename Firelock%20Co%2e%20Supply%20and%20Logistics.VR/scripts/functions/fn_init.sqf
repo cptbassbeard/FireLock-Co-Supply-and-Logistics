@@ -1,14 +1,6 @@
-if !(isServer) exitWith {};
+
 trainthrust = 0;
 interval = 0;
-
-
-
-
-
-
-
-
 FLCSL_configTracks = [
 "Land_Track_01_10m_F", //start of base game tracks
 "Land_Track_01_20m_F",
@@ -23,8 +15,8 @@ FLCSL_configTracks = [
 "Land_Track_01_turnout_right_F", // end of base game tracks
 "ATS_Tracks_Base" //ATS tracks
 ];
-missionNamespace setVariable ["FLCSL_Tracks", FLCSL_configTracks append (parseSimpleArray FLC_CBA_tracks)];
-
+FLCSL_configTracks append (parseSimpleArray FLC_CBA_tracks);
+missionNamespace setVariable ["FLCSL_Tracks", FLCSL_configTracks, true];
 
 /*
 _newTrack = nearestTerrainObjects [trackStart, ["Railway"], worldSize * sqrt 2 / 2, true];

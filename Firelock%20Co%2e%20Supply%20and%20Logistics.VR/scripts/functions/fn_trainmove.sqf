@@ -1,5 +1,7 @@
 params ["_trainObj"];
-lastIndex = track_0;
+_surface = lineIntersectsSurfaces [getPosASL trainobj vectorAdd [0,0,5], getPosASL trainobj vectorAdd [0,0,-8], trainobj, objNull, true, -1, "FIRE", "GEOM", true];
+lastIndex = ((_surface select 0) select 2);
+
 nextIndex = [trainObj,lastIndex,false] call LTH_fnc_findNextTrack;
 trainObj setVariable ["LTH_trainReversing", false, true];
 _prevVectorDir = vectorDir trainobj;

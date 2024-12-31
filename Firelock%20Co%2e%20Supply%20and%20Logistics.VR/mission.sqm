@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=98;
+		nextID=145;
 	};
 	class Camera
 	{
-		pos[]={4952.8901,49.109329,6719.5747};
-		dir[]={0.24413234,-0.27579758,-0.92975873};
-		up[]={0.070047937,0.96120989,-0.26677391};
-		aside[]={-0.96726292,4.1676685e-07,-0.25398168};
+		pos[]={5151.7612,32.550797,6522.4922};
+		dir[]={-0.79666322,-0.59894603,-0.081226639};
+		up[]={-0.59585965,0.80078816,-0.060753163};
+		aside[]={-0.10143328,5.561742e-08,0.99484605};
 	};
 };
 binarizationWanted=0;
@@ -30,15 +30,13 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Characters_F_Kart",
 	"A3_Soft_F_Kart_Kart_01",
-	"WW2_SPE_Assets_c_Characters_Germans_c_GER_Wehrmacht",
-	"WW2_SPE_Core_c_EditorPreviews_c",
 	"A3_Structures_F_Exp_Infrastructure_Railways"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=5;
 		class Item0
 		{
 			className="ATS_Tracks_A2";
@@ -67,16 +65,6 @@ class AddonsMetaData
 		};
 		class Item4
 		{
-			className="WW2_SPE_Assets_c_Characters_Germans_c_GER_Wehrmacht";
-			name="WW2_SPE_Assets_c_Characters_Germans_c_GER_Wehrmacht";
-		};
-		class Item5
-		{
-			className="WW2_SPE_Core_c_EditorPreviews_c";
-			name="WW2_SPE_Core_c_EditorPreviews_c";
-		};
-		class Item6
-		{
 			className="A3_Structures_F_Exp_Infrastructure";
 			name="Arma 3 Apex - Infrastructure Objects";
 			author="Bohemia Interactive";
@@ -87,7 +75,6 @@ class AddonsMetaData
 dlcs[]=
 {
 	"Kart",
-	"SPE",
 	"Expansion"
 };
 randomSeed=1084105;
@@ -123,7 +110,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=38;
+		items=40;
 		class Item0
 		{
 			dataType="Object";
@@ -188,7 +175,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4955.9043,5.5985718,6656.7632};
-						angles[]={0,3.1590807,0};
+						angles[]={0,0.042988479,0};
 					};
 					side="Civilian";
 					flags=6;
@@ -232,8 +219,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4956.2319,6.6498461,6651.6777};
-				angles[]={0,3.1590807,0};
+				position[]={5202.8652,6.6387224,6560.3247};
+				angles[]={0,0.042988479,0};
 			};
 			side="Civilian";
 			flags=6;
@@ -697,34 +684,6 @@ class Mission
 		};
 		class Item32
 		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4944.9019,5.0014391,6634.7383};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=73;
-					type="SPE_GER_LAT_Rifleman";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=72;
-		};
-		class Item33
-		{
 			dataType="Object";
 			class PositionInfo
 			{
@@ -740,7 +699,7 @@ class Mission
 			type="Land_Track_01_10m_F";
 			atlOffset=2.09692;
 		};
-		class Item34
+		class Item33
 		{
 			dataType="Object";
 			class PositionInfo
@@ -757,7 +716,7 @@ class Mission
 			type="Land_Track_01_10m_F";
 			atlOffset=5.1928568;
 		};
-		class Item35
+		class Item34
 		{
 			dataType="Object";
 			class PositionInfo
@@ -774,7 +733,7 @@ class Mission
 			type="Land_Track_01_10m_F";
 			atlOffset=8.2231789;
 		};
-		class Item36
+		class Item35
 		{
 			dataType="Object";
 			class PositionInfo
@@ -791,7 +750,7 @@ class Mission
 			type="Land_Track_01_10m_F";
 			atlOffset=11.319117;
 		};
-		class Item37
+		class Item36
 		{
 			dataType="Object";
 			class PositionInfo
@@ -806,6 +765,57 @@ class Mission
 			};
 			id=95;
 			type="ATS_Tracks_A2_Elev_Straight_40";
+		};
+		class Item37
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5204.2925,19.369608,6666.9663};
+				angles[]={5.9693737,0,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=136;
+			type="Land_Track_01_10m_F";
+			atlOffset=14.393309;
+		};
+		class Item38
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5204.3013,22.399931,6676.3149};
+				angles[]={5.9693737,0,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=137;
+			type="Land_Track_01_10m_F";
+			atlOffset=17.423632;
+		};
+		class Item39
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5204.2988,25.495869,6685.7847};
+				angles[]={5.9693737,0,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=138;
+			type="Land_Track_01_10m_F";
+			atlOffset=20.519569;
 		};
 	};
 };

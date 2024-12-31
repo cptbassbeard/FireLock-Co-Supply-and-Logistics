@@ -1,7 +1,6 @@
 params ["_trainObj"];
-_surface = lineIntersectsSurfaces [getPosASL trainobj vectorAdd [0,0,5], getPosASL trainobj vectorAdd [0,0,-8], trainobj, objNull, true, -1, "FIRE", "GEOM", true];
-lastIndex = ((_surface select 0) select 2);
 
+lastIndex = trainobj;
 nextIndex = [trainObj,lastIndex,false] call LTH_fnc_findNextTrack;
 trainObj setVariable ["LTH_trainReversing", false, true];
 _prevVectorDir = vectorDir trainobj;
@@ -17,7 +16,9 @@ _handler = [{
 	trainthrust = trainthrust * 0.998; //drag value to return it to close 0
 	interval =  interval + trainthrust;
 	_nextIndexPos = [trainobj,nextIndex] call LTH_fnc_findpos;
+	systemChat str _nextIndexPos;
 	_lastIndexPos = [trainobj,lastIndex] call LTH_fnc_findpos;
+	systemChat str _lastIndexPos;
 	trainobj setdir ([getdir trainobj, (trainobj getdir nextIndex), interval] call BIS_fnc_clerp);
 	_marker = createVehicle ["Sign_Arrow_Large_F", (interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) vectorMultiply 0.5) vectorAdd (vectorside trainObj),_nextIndexPos]),[],0,"CAN_COLLIDE"]; //debug
 
@@ -31,7 +32,6 @@ _handler = [{
 			(vectorUp lastindex), //fromVectorUp
 			(vectorUp nextIndex), //toVectorUp - this is the problem child
 			interval]; //
-		systemChat str interval;
 			if (interval <= 0 && (_reversing) && (trainthrust <= 0)) then {interval = 1; 
 			nextIndex = lastindex;
 			lastindex = [trainObj,lastindex,false] call LTH_fnc_findNextTrack;

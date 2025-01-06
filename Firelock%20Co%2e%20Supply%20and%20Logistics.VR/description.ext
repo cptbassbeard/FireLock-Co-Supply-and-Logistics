@@ -5,3 +5,4 @@ class CfgFunctions
 };
 
 enableDebugConsole = 1;
+allowFunctionsLog = 1;

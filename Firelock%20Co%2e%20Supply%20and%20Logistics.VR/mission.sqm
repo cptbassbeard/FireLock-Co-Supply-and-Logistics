@@ -12,6 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
+<<<<<<< HEAD
 		nextID=157;
 	};
 	class Camera
@@ -20,6 +21,16 @@ class EditorData
 		dir[]={0.91047996,-0.40260211,0.094599269};
 		up[]={0.40044731,0.91537356,0.04160668};
 		aside[]={0.10334518,-1.823646e-07,-0.99464875};
+=======
+		nextID=145;
+	};
+	class Camera
+	{
+		pos[]={5151.7612,32.550797,6522.4922};
+		dir[]={-0.79666322,-0.59894603,-0.081226639};
+		up[]={-0.59585965,0.80078816,-0.060753163};
+		aside[]={-0.10143328,5.561742e-08,0.99484605};
+>>>>>>> parent of 2ccb554 (localisation update)
 	};
 };
 binarizationWanted=0;
@@ -110,7 +121,11 @@ class Mission
 	};
 	class Entities
 	{
+<<<<<<< HEAD
 		items=52;
+=======
+		items=40;
+>>>>>>> parent of 2ccb554 (localisation update)
 		class Item0
 		{
 			dataType="Object";
@@ -175,7 +190,11 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4955.9043,5.5985718,6656.7632};
+<<<<<<< HEAD
 						angles[]={0,3.1314774,-0};
+=======
+						angles[]={0,0.042988479,0};
+>>>>>>> parent of 2ccb554 (localisation update)
 					};
 					side="Civilian";
 					flags=6;
@@ -219,8 +238,13 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
+<<<<<<< HEAD
 				position[]={4859.2402,6.6498466,6761.7715};
 				angles[]={0,3.1314774,-0};
+=======
+				position[]={5202.8652,6.6387224,6560.3247};
+				angles[]={0,0.042988479,0};
+>>>>>>> parent of 2ccb554 (localisation update)
 			};
 			side="Civilian";
 			flags=6;
@@ -656,7 +680,11 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
+<<<<<<< HEAD
 				position[]={4859.2144,4.7952137,6729.7988};
+=======
+				position[]={4956.1509,4.7952137,6726.2744};
+>>>>>>> parent of 2ccb554 (localisation update)
 			};
 			side="Empty";
 			flags=5;
@@ -671,7 +699,11 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
+<<<<<<< HEAD
 				position[]={4859.2144,4.7952137,6769.6924};
+=======
+				position[]={4956.1509,4.7952137,6766.168};
+>>>>>>> parent of 2ccb554 (localisation update)
 			};
 			side="Empty";
 			flags=5;
@@ -817,6 +849,7 @@ class Mission
 			type="Land_Track_01_10m_F";
 			atlOffset=20.519569;
 		};
+<<<<<<< HEAD
 		class Item40
 		{
 			dataType="Object";
@@ -1006,5 +1039,7 @@ class Mission
 			id=156;
 			type="ATS_Tracks_A2_Elev_Straight_40";
 		};
+=======
+>>>>>>> parent of 2ccb554 (localisation update)
 	};
 };

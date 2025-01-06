@@ -23,7 +23,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="Firelock%20Co%2e%20Supply%20and%20Logistics";
+sourceName="~Firelock%20Co%2e%20Supply%20and%20Logistics";
 addons[]=
 {
 	"ATS_Tracks_A2",

@@ -1,6 +1,4 @@
-
-trainthrust = 0;
-interval = 0;
+if !(isServer) exitWith {false};
 FLCSL_configTracks = [
 "Land_Track_01_10m_F", //start of base game tracks
 "Land_Track_01_20m_F",
@@ -48,5 +46,5 @@ FLCSL_configTracks = [
 "Land_Rail_TrackE_TurnOutR_F",
 "Land_Rail_Track_TurnOutR_F" //epoc track end
 ];
-FLCSL_configTracks append (parseSimpleArray FLC_CBA_tracks);
-missionNamespace setVariable ["FLCSL_Tracks", FLCSL_configTracks, true];
+FLCSL_configTracks append (parseSimpleArray FLCSL_CBA_tracks);
+FLCSL_trainThrust = 0.0001;

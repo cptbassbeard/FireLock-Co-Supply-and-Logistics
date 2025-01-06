@@ -1,57 +1,55 @@
 params ["_trainObj"];
-
-lastIndex = trainobj;
-nextIndex = [trainObj,lastIndex,false] call LTH_fnc_findNextTrack;
-trainObj setVariable ["LTH_trainReversing", false, true];
-_prevVectorDir = vectorDir trainobj;
+_lastIndex = _trainObj;
+_nextIndex = [_trainObj,_lastIndex,false] call FLCSL_fnc_findNextTrack;
+_trainObj setVariable ["FLCSL_trainReversing", false, true];
 _handler = [{
 	params ["_args", "_handle"];
-	_args params ["_trainObj","_nextIndex","_lastIndex"];
-    if (!isMultiplayer && isGamePaused) exitWith {};
-	//_trainThrust = trainObj getVariable "LTH_trainThrust";
-	//interval = trainObj getVariable "LTH_interval";
-	_reversing = trainObj getVariable "LTH_trainReversing";
-	_projectedPos = trainObj getVariable "LTH_projectedPos";
-	if (trainthrust == 0) exitWith {};
-	trainthrust = trainthrust * 0.998; //drag value to return it to close 0
-	interval =  interval + trainthrust;
-	_nextIndexPos = [trainobj,nextIndex] call LTH_fnc_findpos;
-	systemChat str _nextIndexPos;
-	_lastIndexPos = [trainobj,lastIndex] call LTH_fnc_findpos;
-	systemChat str _lastIndexPos;
-	trainobj setdir ([getdir trainobj, (trainobj getdir nextIndex), interval] call BIS_fnc_clerp);
-	_marker = createVehicle ["Sign_Arrow_Large_F", (interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) vectorMultiply 0.5) vectorAdd (vectorside trainObj),_nextIndexPos]),[],0,"CAN_COLLIDE"]; //debug
-
-		trainObj setVelocityTransformation [
-			(interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) vectorMultiply 0.5) vectorAdd (vectorside trainObj),_nextIndexPos]), // From point
-			(interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) vectorMultiply 0.5) vectorAdd (vectorside trainObj),_nextIndexPos]), // to point
+	_args params ["_trainObj","__nextIndex","_lastIndex"];
+	if (!isMultiplayer && isGamePaused) exitWith {};
+	_trainThrust = _trainObj getVariable "FLCSL__trainThrust";
+	_interval = _trainObj getVariable "FLCSL_interval";
+	systemchat str _interval;
+	_reversing = _trainObj getVariable "FLCSL_trainReversing";
+	_projectedPos = _trainObj getVariable "FLCSL_projectedPos";
+	if (_trainThrust == 0) exitWith {};
+	_trainThrust = _trainThrust * 0.998; //drag value to return it to close 0
+	//_interval = linearConversion [0,1,(_interval + _trainThrust),0,1, true];
+	_interval = _interval + _trainThrust;
+	_trainObj setVariable ["FLCSL_interval", _interval, true];
+	_nextIndexPos = [_trainObj,_nextIndex] call FLCSL_fnc_findpos;
+	_lastIndexPos = [_trainObj,_lastIndex] call FLCSL_fnc_findpos;
+	_trainObj setdir ([getdir _trainObj, (_trainObj getdir _nextIndex), _interval] call BIS_fnc_clerp);
+	systemchat str (_interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) vectorMultiply 0.5) vectorAdd (vectorside _trainObj),_nextIndexPos]);
+		_trainObj setVelocityTransformation [
+			(_interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) vectorMultiply 0.5) vectorAdd (vectorside _trainObj),_nextIndexPos]), // From point
+			(_interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) vectorMultiply 0.5) vectorAdd (vectorside _trainObj),_nextIndexPos]), // to point
 			[0,0,0], // from vel
 			[0,0,0],// to vel
-			(vectorDir trainObj), //fromVectorDir
-			(vectorDir trainObj), //toVectorDir 
-			(vectorUp lastindex), //fromVectorUp
-			(vectorUp nextIndex), //toVectorUp - this is the problem child
-			interval]; //
-			if (interval <= 0 && (_reversing) && (trainthrust <= 0)) then {interval = 1; 
-			nextIndex = lastindex;
-			lastindex = [trainObj,lastindex,false] call LTH_fnc_findNextTrack;
-			_nextIndexPos = [trainobj,nextIndex] call LTH_fnc_findpos;
-			_lastIndexPos = [trainobj,lastIndex] call LTH_fnc_findpos;
-			};
-			//add if reversing and interval is greater than 1 to run the forward motion code minus the interval setting. stops overshooting when reversing
-			if (interval >= 1 && !(_reversing) && (trainthrust >= 0)) then {interval = 0; 
-			lastindex = nextIndex;
-			nextIndex = [trainObj,lastIndex,false] call LTH_fnc_findNextTrack;
-			_nextIndexPos = [trainobj,nextIndex] call LTH_fnc_findpos;
-			_lastIndexPos = [trainobj,lastIndex] call LTH_fnc_findpos;
-			};
+			(vectorDir _trainObj), //fromVectorDir
+			(vectorDir _trainObj), //toVectorDir 
+			(vectorUp _lastIndex), //fromVectorUp
+			(vectorUp _nextIndex), //toVectorUp - this is the problem child
+			_interval
+			]; //
+		if (_interval <= 0 && (_reversing) && (_trainThrust <= 0)) then {_interval = 1; 
+		_nextIndex = _lastIndex;
+		_lastIndex = [_trainObj,_lastIndex,false] call FLCSL_fnc_findNextTrack;
+		_nextIndexPos = [_trainObj,_nextIndex] call FLCSL_fnc_findpos;
+		_lastIndexPos = [_trainObj,_lastIndex] call FLCSL_fnc_findpos;
+		};
+		//add if reversing and _interval is greater than 1 to run the forward motion code minus the _interval setting. stops overshooting when reversing
+		if (_interval >= 1 && !(_reversing) && (_trainThrust >= 0)) then {_interval = 0; 
+		lastindex = _nextIndex;
+		_nextIndex = [_trainObj,_lastIndex,false] call FLCSL_fnc_findNextTrack;
+		_nextIndexPos = [_trainObj,_nextIndex] call FLCSL_fnc_findpos;
+		_lastIndexPos = [_trainObj,_lastIndex] call FLCSL_fnc_findpos;
+		};
+		if !(alive _trainObj) exitWith {_this select 1 call CBA_fnc_removePerFrameHandler };
 },
  0,
-[trainObj,nextIndex,lastIndex]] 
+[_trainObj,_nextIndex,_lastIndex]] 
 call CBA_fnc_addPerFrameHandler;
+true
 
-//[trainObj,nextIndex] spawn LTH_fnc_trainmove;
+//[_trainObj,_nextIndex] spawn FLCSL_fnc_trainmove;
 /*
-
-interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) / 2) vectorAdd ((getdir trainObj) vectorMultiply 25),_nextIndexPos]
-((_lastIndexPos vectorAdd _nextIndexPos) / 2) vectorAdd ((getdir trainObj) vectorMultiply interval)

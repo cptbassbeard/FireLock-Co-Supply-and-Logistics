@@ -1,12 +1,11 @@
-class FLCSL
+class LTH
 {
-    class FLCSL
+    class LTH
     {
         file = "scripts\functions";
         class init {
             postInit	= 1;
         };
-        class traininit {};
         class trainmove {};
         class keybinds {
             preInit     = 1;

@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=148;
+		nextID=145;
 	};
 	class Camera
 	{
-		pos[]={4938.7686,11.509398,6765.791};
-		dir[]={0.82188714,-0.54001135,0.18135396};
-		up[]={0.52732641,0.84165764,0.1163575};
-		aside[]={0.21547231,0,-0.97650981};
+		pos[]={5151.7612,32.550797,6522.4922};
+		dir[]={-0.79666322,-0.59894603,-0.081226639};
+		up[]={-0.59585965,0.80078816,-0.060753163};
+		aside[]={-0.10143328,5.561742e-08,0.99484605};
 	};
 };
 binarizationWanted=0;
@@ -110,7 +110,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=41;
+		items=40;
 		class Item0
 		{
 			dataType="Object";
@@ -175,7 +175,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4955.9043,5.5985718,6656.7632};
-						angles[]={0,2.8256974,0};
+						angles[]={0,0.042988479,0};
 					};
 					side="Civilian";
 					flags=6;
@@ -219,8 +219,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4942.7974,6.6498461,6767.686};
-				angles[]={0,2.8256974,0};
+				position[]={5202.8652,6.6387224,6560.3247};
+				angles[]={0,0.042988479,0};
 			};
 			side="Civilian";
 			flags=6;
@@ -235,19 +235,6 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
 					property="hideObject";
 					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
 					class Value
@@ -259,7 +246,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=2;
+				nAttributes=1;
 			};
 		};
 		class Item5
@@ -588,7 +575,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5201.9917,4.7952137,6525.1401};
+				position[]={5202.4253,4.7952137,6525.1772};
 				angles[]={6.2744884,0.0094819162,0.083926953};
 			};
 			side="Empty";
@@ -604,7 +591,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5202.4238,4.7952137,6564.8188};
+				position[]={5203.0298,4.7952137,6564.856};
 				angles[]={6.2831616,0.01020936,0.084022112};
 			};
 			side="Empty";
@@ -620,7 +607,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5203.3271,4.7952137,6604.9941};
+				position[]={5203.7607,4.7952137,6605.0313};
 				angles[]={0,0.020857794,0};
 			};
 			side="Empty";
@@ -669,8 +656,22 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4943.8765,4.7952137,6764.4922};
-				angles[]={0,2.8220043,0};
+				position[]={4956.1509,4.7952137,6726.2744};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=59;
+			type="ATS_Tracks_A2_Elev_Straight_40";
+		};
+		class Item31
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4956.1509,4.7952137,6766.168};
 			};
 			side="Empty";
 			flags=5;
@@ -681,12 +682,12 @@ class Mission
 			id=60;
 			type="ATS_Tracks_A2_Elev_Straight_40";
 		};
-		class Item31
+		class Item32
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5203.8594,7.0732188,6629.1777};
+				position[]={5204.293,7.0732188,6629.2148};
 				angles[]={5.9693737,0,0};
 			};
 			side="Empty";
@@ -698,12 +699,12 @@ class Mission
 			type="Land_Track_01_10m_F";
 			atlOffset=2.09692;
 		};
-		class Item32
+		class Item33
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5203.8569,10.169156,6638.6475};
+				position[]={5204.2905,10.169156,6638.6846};
 				angles[]={5.9693737,0,0};
 			};
 			side="Empty";
@@ -715,12 +716,12 @@ class Mission
 			type="Land_Track_01_10m_F";
 			atlOffset=5.1928568;
 		};
-		class Item33
+		class Item34
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5203.8657,13.199478,6647.9961};
+				position[]={5204.2993,13.199478,6648.0332};
 				angles[]={5.9693737,0,0};
 			};
 			side="Empty";
@@ -732,12 +733,12 @@ class Mission
 			type="Land_Track_01_10m_F";
 			atlOffset=8.2231789;
 		};
-		class Item34
+		class Item35
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5203.8633,16.295416,6657.4658};
+				position[]={5204.2969,16.295416,6657.5029};
 				angles[]={5.9693737,0,0};
 			};
 			side="Empty";
@@ -749,7 +750,7 @@ class Mission
 			type="Land_Track_01_10m_F";
 			atlOffset=11.319117;
 		};
-		class Item35
+		class Item36
 		{
 			dataType="Object";
 			class PositionInfo
@@ -765,12 +766,12 @@ class Mission
 			id=95;
 			type="ATS_Tracks_A2_Elev_Straight_40";
 		};
-		class Item36
+		class Item37
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5203.8589,19.369608,6666.9292};
+				position[]={5204.2925,19.369608,6666.9663};
 				angles[]={5.9693737,0,0};
 			};
 			side="Empty";
@@ -782,12 +783,12 @@ class Mission
 			type="Land_Track_01_10m_F";
 			atlOffset=14.393309;
 		};
-		class Item37
+		class Item38
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5203.8677,22.399931,6676.2778};
+				position[]={5204.3013,22.399931,6676.3149};
 				angles[]={5.9693737,0,0};
 			};
 			side="Empty";
@@ -799,12 +800,12 @@ class Mission
 			type="Land_Track_01_10m_F";
 			atlOffset=17.423632;
 		};
-		class Item38
+		class Item39
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5203.8652,25.495869,6685.7476};
+				position[]={5204.2988,25.495869,6685.7847};
 				angles[]={5.9693737,0,0};
 			};
 			side="Empty";
@@ -815,38 +816,6 @@ class Mission
 			id=138;
 			type="Land_Track_01_10m_F";
 			atlOffset=20.519569;
-		};
-		class Item39
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4955.689,4.7952142,6716.2524};
-				angles[]={0,3.0723956,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=146;
-			type="ATS_Tracks_A2_Elev_Curve_Right_1";
-		};
-		class Item40
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4952.6748,4.7952142,6735.938};
-				angles[]={0,2.9072223,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=147;
-			type="ATS_Tracks_A2_Elev_Curve_Right_1";
 		};
 	};
 };

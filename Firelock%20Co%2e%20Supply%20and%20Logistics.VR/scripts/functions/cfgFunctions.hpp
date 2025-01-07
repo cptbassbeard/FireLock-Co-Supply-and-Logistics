@@ -1,6 +1,6 @@
-class LTH
+class FLCSL
 {
-    class LTH
+    class FLCSL
     {
         file = "scripts\functions";
         class init {
@@ -12,5 +12,6 @@ class LTH
         };
         class findNextTrack {};
         class findPos {};
+        class pathFinding {};
     };
 };

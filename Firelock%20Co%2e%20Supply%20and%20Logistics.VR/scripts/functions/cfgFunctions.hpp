@@ -4,14 +4,13 @@ class FLCSL
     {
         file = "scripts\functions";
         class init {
-            postInit	= 1;
+            preInit	= 1;
         };
-        class trainmove {};
         class keybinds {
-            preInit     = 1;
+            postInit = 1;
         };
+        class trainMove {};
+        class trainInit {};
         class findNextTrack {};
-        class findPos {};
-        class pathFinding {};
     };
 };

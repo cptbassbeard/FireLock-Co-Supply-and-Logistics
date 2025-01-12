@@ -1,17 +1,18 @@
 params ["_trainobj"];
-_nextIndexPos = getPosASL nextindex;
-_lastIndexPos = getPosASL lastindex;
 if (isNil "_trainObj") exitWith {systemchat "train object is not valid"};
-
 _handler = [{
 	params ["_args", "_handle"];
 	_args params ["_trainObj"];
 	_velocity = _trainobj getVariable "FLCSL_trainThrust";
 	_interval = _trainobj getVariable "FLCSL_interval";
+	_lastIndexPos = _trainObj getVariable "FLCSL_lastIndex";
+	_nextIndexPos = _trainObj getVariable "FLCSL_nextIndex";
     if (!isMultiplayer && isGamePaused) exitWith {};
 	if (isNil "_trainObj") exitWith {systemchat "train object is not valid"};
 	if (isNil "_velocity") exitwith {systemchat "thrust isnt set"};
 	if (isNil "_interval") exitwith {systemchat "interval isnt set"};
+	if (isNil "_lastIndexPos") exitwith {systemchat "last index pos isnt set"};
+	if (isNil "_nextIndexPos") exitwith {systemchat "next index pos isnt set"};
 	if (_velocity == 0) exitwith {};
 	_velocity = _velocity * 0.998; //drag value to return it to close 0
 	_interval =  _interval + _velocity;

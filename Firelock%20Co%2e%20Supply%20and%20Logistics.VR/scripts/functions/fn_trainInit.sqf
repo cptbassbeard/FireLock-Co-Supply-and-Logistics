@@ -8,6 +8,6 @@ if (isNil "_trainObj") exitWith {systemchat "train object is not valid init"};
 	_this select 0 setvariable ["FLCSL_carriages", _carriages, true];
 	_this select 0 setvariable ["FLCSL_interval", 0, true];
 	_this select 0 setvariable ["FLCSL_nextIndex", [_this select 0] call FLCSL_fnc_findNextTrack, true];
-	_this select 0 setvariable ["FLCSL_lastIndex", objNull, true];
+	_this select 0 setvariable ["FLCSL_lastIndex", [_this select 0] call FLCSL_startPosition, true];
 	[_this select 0] call FLCSL_fnc_trainMove;
 }, [_trainobj]] call CBA_fnc_execNextFrame;

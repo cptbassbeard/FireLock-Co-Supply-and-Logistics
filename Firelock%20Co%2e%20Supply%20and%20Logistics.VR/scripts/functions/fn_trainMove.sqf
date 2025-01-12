@@ -1,5 +1,6 @@
 params ["_trainobj"];
 if (isNil "_trainObj") exitWith {systemchat "train object is not valid"};
+
 _handler = [{
 	params ["_args", "_handle"];
 	_args params ["_trainObj"];

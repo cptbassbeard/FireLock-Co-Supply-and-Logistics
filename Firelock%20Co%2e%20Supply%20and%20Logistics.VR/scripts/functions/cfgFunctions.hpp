@@ -12,6 +12,6 @@ class FLCSL
         class trainMove {};
         class trainInit {};
         class findNextTrack {};
-        class startPosition {};
+        class trackPosition {};
     };
 };

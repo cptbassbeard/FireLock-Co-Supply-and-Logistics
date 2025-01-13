@@ -1,4 +1,4 @@
-params ["_trainobj"];
+params ["_trainobj","_reversing"];
 _currentIndex = _trainobj getVariable "FLCSL_lastIndex";
 _pos = getPosASL _trainobj;
 _forward = vectorDir _trainobj;

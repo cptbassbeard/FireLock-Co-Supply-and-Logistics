@@ -13,5 +13,6 @@ class FLCSL
         class trainInit {};
         class findNextTrack {};
         class trackPosition {};
+        class vectorSideCalc {};
     };
 };

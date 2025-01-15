@@ -29,8 +29,8 @@ FLCSL_fnc_mainHandler = {
 		diag_log _interval;
 		_trainObj setVelocityTransformation
 		[
-			(_interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) vectorMultiply 0.5) vectorAdd (vectorside _trainObj),_nextIndexPos]), //_currentpos
-			(_interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) vectorMultiply 0.5) vectorAdd (vectorside _trainObj),_nextIndexPos]), //_nextpos
+			(_interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) vectorMultiply 0.5) vectorAdd (vectorside [_trainObj,_left call FLCSL_vectorSideCalc]),_nextIndexPos]), //_currentpos
+			(_interval bezierInterpolation [_lastIndexPos,((_lastIndexPos vectorAdd _nextIndexPos) vectorMultiply 0.5) vectorAdd (vectorside [_trainObj,_left call FLCSL_vectorSideCalc]),_nextIndexPos]), //_nextpos
 			[0,0,0], //_currentvelocity
 			[0,0,0], //_next velocity
 			vectorDir _trainobj getVariable "FLCSL_lastIndex", //_currentvectorDir

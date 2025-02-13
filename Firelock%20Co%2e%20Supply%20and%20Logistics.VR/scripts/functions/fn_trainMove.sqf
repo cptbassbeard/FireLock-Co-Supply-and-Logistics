@@ -2,6 +2,8 @@ params ["_trainobj"];
 if (isNil "_trainObj") exitWith {systemchat "train object is not valid"};
 
 
+
+
 FLCSL_fnc_mainHandler = {
 	params ["_trainobj"];
 	_trainObj setVariable ["FLCSL_lastIndexPos",([_trainObj,objnull,true] call FLCSL_trackPosition), true];
@@ -25,6 +27,7 @@ FLCSL_fnc_mainHandler = {
 		if (_velocity == 0) exitwith {};
 		_velocity = _velocity * 0.998; //drag value to return it to close 0
 		_interval =  _interval + _velocity;
+		_trainObj setvariable ["FLCSL_interval", _interval, true];
 		diag_log _trainobj;
 		diag_log _interval;
 		_trainObj setVelocityTransformation

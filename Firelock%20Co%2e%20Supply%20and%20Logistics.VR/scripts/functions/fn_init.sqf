@@ -1,11 +1,20 @@
 
 // CHECKBOX --- extra argument: default value
 ["FLCSL_CBA_debug", "CHECKBOX", ["Debug", "turn on debug for all trains"], "Firelock Co Supply & Logistics", false,1,{},false] call CBA_fnc_addSetting;
+["FLCSL_CBA_aiCanUseTrains", "CHECKBOX", ["Allow AI to use trains (EXPERIMENTAL)", "Enable or disable AI using trains"], "Firelock Co Supply & Logistics", false,1,{},false] call CBA_fnc_addSetting;
+["FLCSL_CBA_trainRamming", "CHECKBOX", ["Allow trains to ram blockades (EXPERIMENTAL)", "Enable or disable trains colliding with objects on the track"], "Firelock Co Supply & Logistics", false,1,{},false] call CBA_fnc_addSetting;
+
 
 // EDITBOX --- extra argument: default value
 ["FLCSL_CBA_tracks", "EDITBOX",  ["custom track classnames", "for adding custom tracks"], "Firelock Co Supply & Logistics", "['ATS_Tracks_Base','somemoreclassnames']", 1, {},true] call CBA_fnc_addSetting;
+["FLCSL_CBA_customTrain", "EDITBOX",  ["custom train classnames (TBA)", "for adding custom tracks"], "Firelock Co Supply & Logistics", "['VariableNameofTrain,someOtherVariableName']", 1, {},true] call CBA_fnc_addSetting;
 
-
+// EDITBOX --- Change train Accelerataion values
+["FLCSL_CBA_Acceleration", "EDITBOX",  ["Train Acceleration", "Customise how fast the train is Accelerating. Its a fixed acceleration value"], "Firelock Co Supply & Logistics", "0.0001", 1, {},true] call CBA_fnc_addSetting;
+["FLCSL_CBA_Reverse", "EDITBOX",  ["Train Reverse", "Customise how fast the train is Reversing. Its a fixed acceleration value"], "Firelock Co Supply & Logistics", "0.0001", 1, {},true] call CBA_fnc_addSetting;
+["FLCSL_CBA_Breaking", "EDITBOX",  ["Train Breaking", "Customise how fast the train is at Breaking. Its a multiplier"], "Firelock Co Supply & Logistics", "0.9", 1, {},true] call CBA_fnc_addSetting;
+["FLCSL_CBA_dragEnabled", "CHECKBOX", ["train drag", "Enable or disable train drag"], "Firelock Co Supply & Logistics", false,1,{},false] call CBA_fnc_addSetting;
+["FLCSL_CBA_Drag", "EDITBOX",  ["Train Drag", "Customise how fast the train is slowing down without any input. Its a multiplier"], "Firelock Co Supply & Logistics", "0.9", 1, {},true] call CBA_fnc_addSetting;
 
 FLCSL_configTracks = [
 "Land_Track_01_10m_F", //start of base game tracks

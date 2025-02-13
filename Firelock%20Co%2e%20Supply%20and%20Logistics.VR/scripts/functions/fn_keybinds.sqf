@@ -4,8 +4,10 @@
 		private _unit = call CBA_fnc_currentUnit;
 		if ((driver vehicle _unit isEqualTo _unit) && (vehicle player getVariable "FLCSL_isTrain")) then {
 			_thrust = (vehicle _unit) getVariable "FLCSL_trainThrust";
-			(vehicle _unit) setVariable ["FLCSL_trainThrust",_thrust - 0.0001];
-			(vehicle _unit) setVariable ["FLCSL_trainReversing", true, true];
+			(vehicle _unit) setVariable ["FLCSL_trainThrust",_thrust - FLCSL_CBA_Reverse];
+			if (_thrust <= 0) then {
+				(vehicle _unit) setVariable ["FLCSL_trainReversing", true, true];
+			};
 		};
 }, {
 }, [DIK_S, [false, false, false]],true,1,false] call CBA_fnc_addKeybind;
@@ -14,7 +16,7 @@
 		private _unit = call CBA_fnc_currentUnit;
 		if ((driver vehicle _unit isEqualTo _unit) && (vehicle player getVariable "FLCSL_isTrain")) then {
 			_thrust = (vehicle _unit) getVariable "FLCSL_trainThrust";
-			(vehicle _unit) setVariable ["FLCSL_trainThrust",_thrust + 0.0001, true];
+			(vehicle _unit) setVariable ["FLCSL_trainThrust",_thrust + FLCSL_CBA_Acceleration, true];
 			(vehicle _unit) setVariable ["FLCSL_trainReversing", false, true];
 		};
 }, {
@@ -22,6 +24,11 @@
 
 ["Last train home", "FLCSL_Break_Train", ["Break", "Stop the train"], {
 		private _unit = call CBA_fnc_currentUnit;
-		trainthrust = 0;
+		if ((driver vehicle _unit isEqualTo _unit) && (vehicle player getVariable "FLCSL_isTrain")) then {
+			_thrust = (vehicle _unit) getVariable "FLCSL_trainThrust";
+			if (_thust <= 0.0001) then {(vehicle _unit) setVariable ["FLCSL_trainThrust", 0, true];} else {
+				(vehicle _unit) setVariable ["FLCSL_trainThrust",_thrust * FLCSL_CBA_Breaking, true];
+			};
+		};
 }, {
 }, [DIK_SPACE, [false, false, false]],true,1,false] call CBA_fnc_addKeybind;

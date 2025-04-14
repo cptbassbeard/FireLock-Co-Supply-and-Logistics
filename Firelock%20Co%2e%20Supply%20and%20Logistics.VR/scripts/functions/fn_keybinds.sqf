@@ -32,3 +32,27 @@
 		};
 }, {
 }, [DIK_SPACE, [false, false, false]],true,1,false] call CBA_fnc_addKeybind;
+
+["Last train home", "FLCSL_Left_Train", ["Turn Left", "Make the train turn left at the next possible junction"], {
+		private _unit = call CBA_fnc_currentUnit;
+		if ((driver vehicle _unit isEqualTo _unit) && (vehicle player getVariable "FLCSL_isTrain")) then {
+			
+		};
+}, {
+}, [DIK_SPACE, [false, false, false]],true,1,false] call CBA_fnc_addKeybind;
+
+["Last train home", "FLCSL_Right_Train", ["Turn right", "Make the train turn right at the next possible junction"], {
+		private _unit = call CBA_fnc_currentUnit;
+		if ((driver vehicle _unit isEqualTo _unit) && (vehicle player getVariable "FLCSL_isTrain")) then {
+			
+		};
+}, {
+}, [DIK_SPACE, [false, false, false]],true,1,false] call CBA_fnc_addKeybind;
+
+//Building Mechanics WIP
+["Last train home", "FLCSL_Train_Construction", ["Construction Toggle", "Keybind to alow construction on the train"], {
+		private _unit = call CBA_fnc_currentUnit;
+		_canBuild = _unit getVariable "FLCSCL_canBuild";
+		if (_canbuild) then {}
+}, {
+}, [DIK_F, [false, false, false]],true,1,false] call CBA_fnc_addKeybind;

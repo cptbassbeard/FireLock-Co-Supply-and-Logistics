@@ -14,5 +14,10 @@ class FLCSL
         class findNextTrack {};
         class trackPosition {};
         class vectorSideCalc {};
+        class isDerailed {};
+        class derailTrain {};
+        class trackEndCheck {};
+        class trackCheck {};
+        class attachToTrain {};
     };
 };

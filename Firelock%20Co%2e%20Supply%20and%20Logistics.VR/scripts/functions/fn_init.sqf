@@ -7,7 +7,8 @@
 
 // EDITBOX --- extra argument: default value
 ["FLCSL_CBA_tracks", "EDITBOX",  ["custom track classnames", "for adding custom tracks"], "Firelock Co Supply & Logistics", "['ATS_Tracks_Base','somemoreclassnames']", 1, {},true] call CBA_fnc_addSetting;
-["FLCSL_CBA_customTrain", "EDITBOX",  ["custom train classnames (TBA)", "for adding custom tracks"], "Firelock Co Supply & Logistics", "['VariableNameofTrain,someOtherVariableName']", 1, {},true] call CBA_fnc_addSetting;
+["FLCSL_CBA_customTrain", "EDITBOX",  ["custom train classnames (TBA)", "for adding custom trains"], "Firelock Co Supply & Logistics", "['VariableNameofTrain,someOtherVariableName']", 1, {},true] call CBA_fnc_addSetting;
+
 
 // EDITBOX --- Change train Accelerataion values
 ["FLCSL_CBA_Acceleration", "EDITBOX",  ["Train Acceleration", "Customise how fast the train is Accelerating. Its a fixed acceleration value"], "Firelock Co Supply & Logistics", "0.0001", 1, {},true] call CBA_fnc_addSetting;

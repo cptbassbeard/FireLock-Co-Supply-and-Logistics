@@ -6,5 +6,8 @@
   <li>CBA A3</li>
 </ul>
 <h3>Feature list</h3>
+Functional Train support for FireLock Co. Supply and Logistic train pack
 <h3>Known issues</h3>
 <h3>Planned features</h3>
+Derailment
+attaching carriages mid mission

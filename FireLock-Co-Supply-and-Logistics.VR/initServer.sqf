@@ -1,0 +1,1 @@
+[train_0,[train_1,train_2,train_3,train_4,train_5,train_6,train_7]] call FLCSL_fnc_init;

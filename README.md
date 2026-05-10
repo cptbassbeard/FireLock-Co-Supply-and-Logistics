@@ -10,6 +10,11 @@ CBA settings are added for customising speed, reverse speed etc.
 Adjust at your own preference and even change the sliders in the CBA_keybinds file.
 CBA Control are also added for driving the train.
 
+to initialise the train - this is run by the server
+[train_0,[train_1,train_2,train_3,train_4,train_5,train_6,train_7]] call FLCSL_fnc_init;
+train_0 is the engine, the rest of the array is the order in which the carriages are. the train is driven from the engine driver seat.
+You can replace carriages with eg tanks if you so wished, bounding boxes solve the distances
+
 <h3>Requirements</h3>
 <ul>
   <li>CBA A3</li>
